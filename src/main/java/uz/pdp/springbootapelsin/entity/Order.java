@@ -7,6 +7,7 @@ import lombok.NoArgsConstructor;
 
 import javax.persistence.*;
 import java.util.Date;
+import java.util.List;
 
 @AllArgsConstructor
 @NoArgsConstructor
@@ -25,4 +26,10 @@ public class Order {
     @ManyToOne
     @JoinColumn(name = "cust_id")
     private Customer customer; //customer_id
+
+    @OneToOne(mappedBy = "order")
+    private Invoice invoice;
+
+    @OneToMany(mappedBy = "order")
+    private List<Detail> detail;
 }

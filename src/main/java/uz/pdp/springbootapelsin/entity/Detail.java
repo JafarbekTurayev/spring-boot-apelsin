@@ -25,4 +25,6 @@ public class Detail {
     @ManyToOne //table ichida ustun ochadi
     @JoinColumn(name = "pr_id")
     private Product product;
+    @Column(nullable = false)
+    private Short quantity;
 }
