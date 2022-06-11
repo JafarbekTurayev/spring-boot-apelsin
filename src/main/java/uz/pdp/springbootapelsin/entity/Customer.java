@@ -14,6 +14,7 @@ import javax.persistence.*;
 @Entity
 @Table(name = "customer")
 public class Customer {
+    //customer
     @Id //pk
     @GeneratedValue(strategy = GenerationType.IDENTITY) //serial
     private Integer id;
