@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
+          integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.1/css/all.css"
+          integrity="sha384-5sAR7xN1Nv6T6+dT2mhtzEpVJvfS3NScPQTrOxhwjIuvcA67KV2R5Jz6kr4abQsz" crossorigin="anonymous">
+</head>
+<body>
+<div class="container">
+    <h1>Category Management System</h1>
+    <hr>
+    <h2>Update Category</h2>
+
+    <form th:action="@{/category/edit/{id}(id=${category.id})}" th:object="${category}" method="post">
+
+        <!-- Add hidden form field to handle update -->
+        <input type="hidden" th:value="${category.id}" name="id"/>
+
+        <input type="text" th:value="${category.name}" name="name" class="form-control mb-4 col-4">
+
+        <button type="submit" class="btn btn-info col-2"> Update Category</button>
+    </form>
+
+    <hr>
+
+    <div class="row">
+        <div class="col-md-6 mt-5">
+            <input class="btn btn-primary" type="button" value="BACK" onclick="history.go(-1);"/>
+        </div>
+    </div>
+</div>
+</body>
+</html>
